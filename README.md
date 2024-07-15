@@ -22,4 +22,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Technologies
 
-Was Bet on the implemented features on the nextjs 4, which provide cache, images api, suspense and other useful things.
+Was Bet on the implemented features on the nextjs 14, which provide cache, images api, suspense and other useful things.
