@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import CommentForm from "@/app/components/comment-form";
 import BackLink from "@/app/components/back-link";
+import { siteConfig } from "@/config";
 
 interface Props {
   params: { slug: string[] };
@@ -11,7 +12,7 @@ interface Props {
 
 const PostPage = async ({ params: { slug } }: Props) => {
   // INFO: it's avoid an extra external request to get the article, because we already have it in the articles list and request were cached
-  const response = await fetch(`http://localhost:3000/api/articles/`);
+  const response = await fetch(`${siteConfig.APP_URL}api/articles/`);
 
   const articles: ArticlesType = await response.json();
   if (!articles?.response?.results) {

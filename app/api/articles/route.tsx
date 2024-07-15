@@ -1,6 +1,6 @@
 import { ArticlesType } from "@/app/types";
 import { siteConfig } from "@/config";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   const response = await fetch(

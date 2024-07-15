@@ -5,7 +5,7 @@ import { ArticlesType } from "../types";
 
 const Articles = async () => {
   // INFO: This path is hardcoded to the local server, you can change it to your own server.
-  const response = await fetch(`http://localhost:3000/api/articles/`);
+  const response = await fetch(`${siteConfig.APP_URL}api/articles/`);
   const articles: ArticlesType = await response.json();
   if (!articles?.response?.results) {
     return <p className="text-sm">Network error, please try again later.</p>;

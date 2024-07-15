@@ -1,6 +1,7 @@
 export type SiteConfigs = typeof siteConfig;
 
 interface Config {
+  APP_URL: string;
   API_URL: string;
   API_TOKEN: string;
   cacheConfig?: {
@@ -9,6 +10,7 @@ interface Config {
 }
 
 export const siteConfig: Config = {
+  APP_URL: process.env.APP_URL || "http://localhost:3000/",
   API_URL:
     "https://content.guardianapis.com/search?show-fields=webPublicationDate,webTitle,thumbnail,bodyText",
   // api token is not in the env file for simplicity
