@@ -10,7 +10,7 @@ interface Config {
 }
 
 export const siteConfig: Config = {
-  APP_URL: process.env.APP_URL || "http://localhost:3000/",
+  APP_URL: process.env.APP_URL || `http://localhost:${process.env.PORT}/`,
   API_URL:
     "https://content.guardianapis.com/search?show-fields=webPublicationDate,webTitle,thumbnail,bodyText",
   // api token is not in the env file for simplicity

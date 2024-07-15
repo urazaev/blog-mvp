@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {siteConfig.APP_URL}
-      {/* <Suspense
+      <Suspense
         fallback={
           <>
             <ArticleSkeleton />
@@ -19,7 +19,7 @@ export default function Home() {
         }
       >
         <Articles />
-      </Suspense> */}
+      </Suspense>
       {/* TODO: implement read more button */}
     </main>
   );
