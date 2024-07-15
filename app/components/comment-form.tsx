@@ -28,12 +28,22 @@ const CommentForm = ({ articleId }: { articleId: string }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label
-          htmlFor="comment"
-          className="block text-lg font-medium text-gray-700 mb-2"
-        >
-          Comment
+      {" "}
+      {savedComments.length > 0 ? (
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold mb-4">Previous Comments</h2>
+          <ul>
+            {savedComments.map((c, index) => (
+              <li key={index} className="mb-2">
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+      <form onSubmit={handleSubmit} className="mt-5">
+        <label htmlFor="comment" className="text-xl font-semibold">
+          Your Comment
         </label>
         <textarea
           id="comment"
@@ -51,18 +61,6 @@ const CommentForm = ({ articleId }: { articleId: string }) => {
           Submit
         </button>
       </form>
-      {savedComments.length > 0 ? (
-        <div className="mt-8">
-          <h2 className="text-xl font-semibold mb-4">Previous Comments</h2>
-          <ul>
-            {savedComments.map((c, index) => (
-              <li key={index} className="mb-2">
-                {c}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
     </div>
   );
 };

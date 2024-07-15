@@ -7,7 +7,6 @@ export default function Home() {
   console.log(siteConfig.APP_URL);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {siteConfig.APP_URL}
       <Suspense
         fallback={
           <>

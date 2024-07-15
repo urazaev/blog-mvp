@@ -5,7 +5,7 @@ import { ArticlesType } from "../types";
 
 const Articles = async () => {
   try {
-    // INFO: This path is hardcoded to the local server, you can change it to your own server.
+    // INFO: This path is hardcoded to the local server at localhost:3000, you can change it to your own server.
     const response = await fetch(`${siteConfig.APP_URL}api/articles/`);
 
     if (!response.ok) {
@@ -14,13 +14,15 @@ const Articles = async () => {
     }
 
     const articles: ArticlesType = await response.json();
+
     if (!articles?.response?.results) {
       return <p className="text-sm">No articles found.</p>;
     }
 
     return (
       <div>
-        {articles.response.results.map((article) => (
+        {/* TODO: implement the read more button */}
+        {articles.response.results.slice(0, 5).map((article) => (
           <Article key={article.id} article={article} />
         ))}
       </div>
